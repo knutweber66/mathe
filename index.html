@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathe Nachhilfe 7. Klasse</title>
+  <style>
+    /* Basis-Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Smooth Scroll für die gesamte Seite */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    /* Fixe Navigationsleiste */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #004080;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .logo a {
+      color: #fff; /* Lesbare weiße Schrift */
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+    /* Mobile Navigation */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #004080;
+        text-align: center;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-active {
+        display: flex;
+      }
+    }
+    /* Container für den Seiteninhalt */
+    .container {
+      padding: 80px 20px 20px; /* Obere Polsterung wegen der fixen Navigation */
+      text-align: center;
+    }
+    .hero {
+      margin: 50px 0;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    /* Button-Styling */
+    .btn {
+      display: inline-block;
+      background-color: #ff6600;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #e65c00;
+    }
+    /* Abschnitt-Styling */
+    section {
+      margin: 80px 0;
+      padding-top: 60px; /* Polsterung für fixe Navigation */
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixe Navigationsleiste -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#home">Mathe Nachhilfe</a>
+    </div>
+    <button class="menu-toggle">☰</button>
+    <div class="nav-links">
+      <a href="#about">Über mich</a>
+      <a href="#services">Angebote</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- Hauptinhalt -->
+  <div class="container" id="home">
+    <div class="hero">
+      <h1>Willkommen zur Mathe Nachhilfe</h1>
+      <p>Individuelle Unterstützung in Mathematik für die 7. Klasse</p>
+      <!-- Button zum Nachhilfebot -->
+      <a class="btn" href="https://chatgpt.com/g/g-67c8bfef36648191b71be45019f1ff53-mathebot" target="_blank">Starte den Nachhilfebot</a>
+    </div>
+
+    <!-- Über mich -->
+    <section id="about">
+      <h2>Über mich</h2>
+      <p>Ich bin [Dein Name], ein erfahrener Nachhilfelehrer mit Leidenschaft für Mathematik. Gemeinsam arbeiten wir daran, deine Fähigkeiten zu verbessern und das Selbstvertrauen in Mathe zu stärken.</p>
+    </section>
+
+    <!-- Angebote -->
+    <section id="services">
+      <h2>Angebote</h2>
+      <p>Ich biete sowohl Einzel- als auch Gruppenunterricht an. Die Stunden werden individuell auf deine Bedürfnisse zugeschnitten – egal ob zur Prüfungsvorbereitung oder zur regelmäßigen Förderung.</p>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>Für weitere Informationen oder zur Terminvereinbarung, schreib mir eine E-Mail an: <a href="mailto:deine.email@example.com">deine.email@example.com</a></p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mathe Nachhilfe 7. Klasse. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    document.querySelector(".menu-toggle").addEventListener("click", function() {
+      document.querySelector(".nav-links").classList.toggle("nav-active");
+    });
+  </script>
+</body>
+</html>
