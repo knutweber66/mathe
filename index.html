@@ -1,188 +1,892 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathe Nachhilfe 7. Klasse</title>
-  <style>
-    /* Basis-Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth; /* Smooth Scroll für die gesamte Seite */
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-    /* Fixe Navigationsleiste */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: #004080;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-    .logo a {
-      color: #fff; /* Lesbare weiße Schrift */
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .nav-links {
-      display: flex;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: #ffcc00;
-    }
-    /* Mobile Navigation */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background: #004080;
-        text-align: center;
-      }
-      .nav-links a {
-        margin: 10px 0;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .nav-active {
-        display: flex;
-      }
-    }
-    /* Container für den Seiteninhalt */
-    .container {
-      padding: 80px 20px 20px; /* Obere Polsterung wegen der fixen Navigation */
-      text-align: center;
-    }
-    .hero {
-      margin: 50px 0;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    /* Button-Styling */
-    .btn {
-      display: inline-block;
-      background-color: #ff6600;
-      color: #fff;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #e65c00;
-    }
-    /* Abschnitt-Styling */
-    section {
-      margin: 80px 0;
-      padding-top: 60px; /* Polsterung für fixe Navigation */
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    section p {
-      font-size: 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f4f4f4;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Mustermann | Marketing Manager</title>
+    <style>
+        /* Globale Stile und Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #1e88e5;
+            --secondary-color: #0d47a1;
+            --accent-color: #f5f5f5;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+            --dark-bg: #1a1a1a;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--accent-color);
+        }
+
+        .services-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: white;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 136, 229, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay p {
+            color: white;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--accent-color);
+        }
+
+        .testimonials-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-btn {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img {
+                order: -1;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-item {
+                margin: 16px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 200px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Fixe Navigationsleiste -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="#home">Mathe Nachhilfe</a>
-    </div>
-    <button class="menu-toggle">☰</button>
-    <div class="nav-links">
-      <a href="#about">Über mich</a>
-      <a href="#services">Angebote</a>
-      <a href="#contact">Kontakt</a>
-    </div>
-  </nav>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">MarketPro</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Start</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">Über mich</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Leistungen</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Referenzen</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Hauptinhalt -->
-  <div class="container" id="home">
-    <div class="hero">
-      <h1>Willkommen zur Mathe Nachhilfe</h1>
-      <p>Individuelle Unterstützung in Mathematik für die 7. Klasse</p>
-      <!-- Button zum Nachhilfebot -->
-      <a class="btn" href="https://chatgpt.com/g/g-67c8bfef36648191b71be45019f1ff53-mathebot" target="_blank">Starte den Nachhilfebot</a>
-    </div>
-
-    <!-- Über mich -->
-    <section id="about">
-      <h2>Über mich</h2>
-      <p>Ich bin [Dein Name], ein erfahrener Nachhilfelehrer mit Leidenschaft für Mathematik. Gemeinsam arbeiten wir daran, deine Fähigkeiten zu verbessern und das Selbstvertrauen in Mathe zu stärken.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Marketing, das Ergebnisse liefert</h1>
+                <p>Ich bin ein freiberuflicher Marketing Manager mit über 10 Jahren Erfahrung. Ich helfe Unternehmen, ihre Zielgruppe zu erreichen und ihr Wachstum zu beschleunigen.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn">Mein Portfolio</a>
+                    <a href="#contact" class="btn btn-outline">Kontakt aufnehmen</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Angebote -->
-    <section id="services">
-      <h2>Angebote</h2>
-      <p>Ich biete sowohl Einzel- als auch Gruppenunterricht an. Die Stunden werden individuell auf deine Bedürfnisse zugeschnitten – egal ob zur Prüfungsvorbereitung oder zur regelmäßigen Förderung.</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Über mich</h2>
+                    <p>Herzlich willkommen auf meiner Webseite! Ich bin Max Mustermann, ein erfahrener Marketing Manager mit einer Leidenschaft für datengetriebene Strategien und kreative Lösungen.</p>
+                    <p>Mit mehr als 10 Jahren Berufserfahrung in verschiedenen Branchen habe ich zahlreichen Unternehmen geholfen, ihre Marketing-Ziele zu erreichen und nachhaltige Ergebnisse zu erzielen.</p>
+                    <p>Mein Ansatz basiert auf einer fundierten Marktanalyse, einem tiefen Verständnis der Kundenbedürfnisse und der Entwicklung maßgeschneiderter Strategien, die perfekt auf Ihre Unternehmensziele abgestimmt sind.</p>
+                    <a href="#contact" class="btn">Lassen Sie uns zusammenarbeiten</a>
+                </div>
+                <div class="about-img">
+                    <img src="/api/placeholder/500/600" alt="Marketing Manager Portrait">
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Für weitere Informationen oder zur Terminvereinbarung, schreib mir eine E-Mail an: <a href="mailto:deine.email@example.com">deine.email@example.com</a></p>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services-title">
+                <h2>Meine Leistungen</h2>
+                <p>Maßgeschneiderte Marketing-Lösungen für Ihr Unternehmen</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Strategische Planung</h3>
+                    <p>Entwicklung umfassender Marketing-Strategien basierend auf Marktanalysen und Ihren Unternehmenszielen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Digitales Marketing</h3>
+                    <p>SEO, SEM, Social Media Marketing und Content-Strategien, die Ihre Online-Präsenz stärken.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Performance Marketing</h3>
+                    <p>Datengetriebene Kampagnen mit Fokus auf messbare Ergebnisse und kontinuierliche Optimierung.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Markenentwicklung</h3>
+                    <p>Aufbau und Pflege einer starken Markenidentität, die bei Ihrer Zielgruppe Anklang findet.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Kundensegmentierung</h3>
+                    <p>Identifizierung und Analyse Ihrer Zielgruppen für personalisierte Marketing-Aktivitäten.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p>Professionelle Betreuung Ihrer Social-Media-Kanäle mit zielgruppengerechtem Content.</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Mathe Nachhilfe 7. Klasse. Alle Rechte vorbehalten.</p>
-  </footer>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="portfolio-title">
+                <h2>Mein Portfolio</h2>
+                <p>Einblicke in meine erfolgreichen Projekte</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>E-Commerce Rebranding</h3>
+                        <p>Komplette Neuausrichtung der Marke mit 45% Umsatzsteigerung</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>B2B Content Marketing</h3>
+                        <p>Leadgenerierung durch hochwertige Content-Strategie</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 3" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Social Media Kampagne</h3>
+                        <p>Reichweitenerhöhung um 200% innerhalb von 3 Monaten</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 4" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Produkteinführung</h3>
+                        <p>Erfolgreiche Markteinführung mit 10.000 Verkäufen im ersten Monat</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 5" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Email Marketing</h3>
+                        <p>Automatisierte Kampagnen mit 35% Conversion Rate</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/600/600" alt="Portfolio 6" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>SEO-Optimierung</h3>
+                        <p>Top 3 Rankings für 50+ Keywords innerhalb von 6 Monaten</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function() {
-      document.querySelector(".nav-links").classList.toggle("nav-active");
-    });
-  </script>
-</body>
-</html>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials-title">
+                <h2>Referenzen</h2>
+                <p>Was meine Kunden über die Zusammenarbeit sagen</p>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonial-slides">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Max hat unser Marketing komplett transformiert. Seine strategischen Einsichten und sein Engagement haben uns geholfen, unsere Zielgruppe besser zu erreichen und unseren Umsatz deutlich zu steigern. Eine Zusammenarbeit, die ich jedem Unternehmen empfehlen kann."
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="/api/placeholder/100/100" alt="Lisa Schmidt">
+                                <div class="author-info">
+                                    <h4>Lisa Schmidt</h4>
+                                    <p>CEO, TechVision GmbH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Als Start-up hatten wir ein begrenztes Budget, aber große Ambitionen. Max hat uns geholfen, unsere Ressourcen optimal einzusetzen und eine Marketingstrategie zu entwickeln, die genau auf unsere Bedürfnisse zugeschnitten war. Die Ergebnisse waren beeindruckend!"
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="/api/placeholder/100/100" alt="Thomas Müller">
+                                <div class="author-info">
+                                    <h4>Thomas Müller</h4>
+                                    <p>Gründer, InnoStart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Wir arbeiten seit über zwei Jahren mit Max zusammen und sind nach wie vor begeistert von seiner Professionalität und seinem Know-how. Er versteht es, komplexe Marketingkonzepte verständlich zu vermitteln und praktisch umzusetzen. Eine echte Bereicherung für unser Unternehmen."
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="/api/placeholder/100/100" alt="Sarah Weber">
+                                <div class="author-info">
+                                    <h4>Sarah Weber</h4>
+                                    <p>Marketing Direktorin, Retail Plus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="testimonial-dot active" data-slide="0"></span>
+                    <span class="testimonial-dot" data-slide="1"></span>
+                    <span class="testimonial-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-title">
+                <h2>Kontakt</h2>
+                <p>Lassen Sie uns über Ihr Projekt sprechen</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="Ihr Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Ihre E-Mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="subject" placeholder="Betreff">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Ihre Nachricht" required></textarea>
+                </div>
+                <div class="form-btn">
+                    <button type="submit" class="btn">Nachricht senden</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#" class="footer-logo">MarketPro</a>
+                    <p>Professionelle Marketing-Dienstleistungen für Unternehmen jeder Größe. Maßgeschneiderte Strategien, messbare Ergebnisse.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
+                        <a href="#" class="social-link">x</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Schnelllinks</h3>
+                    <ul>
+                        <li><a href="#home">Start</a></li>
+                        <li><a href="#about">Über mich</a></li>
+                        <li><a href="#services">Leistungen</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Referenzen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Kontakt</h3>
+                    <ul>
+                        <li>Musterstraße 123</li>
+                        <li>10115 Berlin</li>
+                        <li>info@marketpro.de</li>
+                        <li>+49 30 12345678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MarketPro. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Mobile Menu
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        hamburger.addEventListener("click", mobileMenu);
+        navLinks.forEach(n => n.addEventListener("click", closeMenu));
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+
+        // Smooth Scrolling
+        document.queryS
